@@ -8,6 +8,7 @@ body{
     display: flex;
     justify-content: center;
     background: rgb(188, 222, 222);
+    color: rgb(8, 8, 17);
 }
 
 .container{
@@ -57,6 +58,7 @@ body{
 
 .task{
     display: flex;
+    align-items: center;
     border: 1px solid;
     background-color: #fff;
     margin-bottom: 2em;
@@ -66,6 +68,12 @@ body{
     border-radius: 10px;
     border: 0;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.x-icon {
+    margin-left: auto;
+    margin-right: 1.2em;
+    cursor: pointer;
 }
 
 .task input{
@@ -92,26 +100,64 @@ input[type="checkbox"]:checked ~ .task-text {
 }
 
 .add-task-window{
-    /*display: none;*/
-    width: 300px;
-    height: 250px;
+    display: none;
+    width: 350px;
+    height: 200px;
     background-color: #fff;
     border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     position: absolute;
-    top: 0;
-    left: 50vw;
-    animation: slideIn 1s ease 0s 1 forwards;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: slideIn 0.5s ease 0s 1 forwards;
 }
 
 @keyframes slideIn {
     from {
-        top: -100%;
+        top: 0;
         opacity: 0;
     }
     to {
         top: 50%;
         opacity: 1;
     }
+}
+
+.add-task-window > *{
+    margin:5% 0 0 0;
+    width: 80%;
+}
+
+.add-task-window input{
+    height: 40%;
+    border-radius: 10px;
+    border: 1px solid rgb(200, 200, 200);
+}
+
+.btn-div{
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 10%;
+}
+
+.btn-div .cancel{
+    background-color: rgb(255, 196, 196);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.btn-div .add{
+    background-color: rgb(196, 255, 228);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.add-task-window button{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: 0;
+    cursor: pointer;
 }
 
 .cancel[type="button"]:checked ~ .add-task-window{
