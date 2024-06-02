@@ -4,11 +4,9 @@ const add_btn = document.querySelector('.add-task-btn');
 const modal = document.querySelector('.add-task-window');
 const cancel_btn = document.querySelector('.cancel');
 const add_task_modal = document.querySelector('.add');
-const tasks = document.querySelectorAll('.task');
 const task_count = document.querySelector('.task-count');
 const task_content = document.querySelector('.add-task-window input');
 const task_div = document.querySelector('.tasks-div');
-const delete_btn = document.querySelectorAll('.x-icon');
 
 function setGreeting() {
     const time = new Date();
@@ -27,11 +25,14 @@ function setGreeting() {
 
 function update_count() {
     const tasks = document.querySelectorAll('.task'); // Update tasks collection
-    if (tasks.length > 0) {
-        task_count.textContent = tasks.length;
+    if (tasks.length == 1) {
+        task_count.textContent = tasks.length + ' task';
+    }
+    else if (tasks.length > 1) {
+        task_count.textContent = tasks.length + ' tasks';
     }
     else {
-        task_count.textContent = "no";
+        task_count.textContent = "no tasks";
     }
 }
 
@@ -51,15 +52,21 @@ add_task_modal.addEventListener('click', () => {
         update_count();
         modal.style.display = 'none';
         task_content.value = '';
+        delete_tasks(); // Call delete_tasks to add event listeners to the new task
     }
 })
 
-for (let i = 0; i < delete_btn.length; i++) {
-    delete_btn[i].addEventListener('click', () => {
-        tasks[i].remove(); // Remove the task from the DOM
-        update_count();    // Update the task count after deletion
-    });
+function delete_tasks() {
+    const tasks = document.querySelectorAll('.task'); // Update tasks collection
+    const delete_btn = document.querySelectorAll('.x-icon'); //get delete buttons 
+    for (let i = 0; i < delete_btn.length; i++) {
+        delete_btn[i].addEventListener('click', () => {
+            tasks[i].remove(); // Remove the task from the DOM
+            update_count();    // Update the task count after deletion
+        });
+    }
 }
 
 setGreeting();
 update_count();
+delete_tasks();
