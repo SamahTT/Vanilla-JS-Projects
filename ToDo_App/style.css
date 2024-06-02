@@ -7,18 +7,18 @@ body{
     font-family: "Outfit";
     display: flex;
     justify-content: center;
-    align-items: center;
     background: rgb(188, 222, 222);
 }
 
 .container{
+    margin-top: 10vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius:  15px;
+    border-radius: 15px;
     border: 1px solid;
-    width: max(25em, 40%);
+    width: max(20em, 40%);
     background: #fff;
     border: 0;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -81,19 +81,41 @@ input[type="checkbox"]:checked ~ .task-text {
     border-radius: 50%;
     width: 50px;
     height: 50px;
+    background: #fff;
     border: 0;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 20px;
+    cursor: pointer;
 }
 
 .add-task-window{
-    width: 200px;
-    height: 150px;
+    /*display: none;*/
+    width: 300px;
+    height: 250px;
     background-color: #fff;
     border-radius: 15px;
+    position: absolute;
+    top: 0;
+    left: 50vw;
+    animation: slideIn 1s ease 0s 1 forwards;
+}
+
+@keyframes slideIn {
+    from {
+        top: -100%;
+        opacity: 0;
+    }
+    to {
+        top: 50%;
+        opacity: 1;
+    }
+}
+
+.cancel[type="button"]:checked ~ .add-task-window{
+    display: none;
 }
 
 

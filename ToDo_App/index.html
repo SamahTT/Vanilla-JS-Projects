@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <div class="avatar-div">
-            <img src="cat-avatar.jpg" alt="Avatar Image">
+            <img class="avatar" src="cat-avatar.jpg" alt="Avatar Image">
             <p><span class="lg-text">Good Morning☀️</span><br>
             You have <span class="task-count">4</span> tasks for today!</p>
             <div class="add-task-btn">➕</div>
@@ -17,7 +17,11 @@
         <div class="tasks-div">
             <div class="task">
                 <input type="checkbox">
-                <p class="task-text">Do the laundry</p>
+                <p class="task-text">Read three pages</p>
+            </div>
+            <div class="task">
+                <input type="checkbox">
+                <p class="task-text">Go to the gym</p>
             </div>
             <div class="task">
                 <input type="checkbox">
@@ -25,17 +29,15 @@
             </div>
             <div class="task">
                 <input type="checkbox">
-                <p class="task-text">Do the laundry</p>
-            </div>
-            <div class="task">
-                <input type="checkbox">
-                <p class="task-text">Do the laundry</p>
-            </div>
-            <div class="task">
-                <input type="checkbox">
-                <p class="task-text">Do the laundry</p>
+                <p class="task-text">Feed my cat</p>
             </div>
         </div>
     </div>
+    <div class="add-task-window">
+        <input type="text" placeholder="Your task goes here..">
+        <button>Add</button>
+        <button class="cancel">Cancel</button>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
