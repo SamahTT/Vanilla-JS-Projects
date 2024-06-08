@@ -28,7 +28,7 @@ body {
 .card {
     background-color: rgb(79, 79, 252);
     border-radius: 10px;
-    background-image: url('stars.jpg');
+    background-image: url('images/stars.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -37,7 +37,6 @@ body {
     align-items: center;
     justify-content: center;
 }
-
 
 h1 {
     font-weight: 700;
